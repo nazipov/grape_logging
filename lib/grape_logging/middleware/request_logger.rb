@@ -97,6 +97,7 @@ module GrapeLogging
             db: db_runtime,
             view: view_runtime
           },
+          db_count: db_count,
           method: request.request_method,
           path: request.path,
           params: request.params,
@@ -124,6 +125,10 @@ module GrapeLogging
 
       def reset_db_runtime
         GrapeLogging::Timings.reset_db_runtime
+      end
+
+      def db_count
+        GrapeLogging::Timings.db_count
       end
 
       def start_time
